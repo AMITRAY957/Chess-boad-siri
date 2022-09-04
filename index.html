@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess boad</title>
+    <style>
+    body{
+        text-align: center;
+    }
+    .cell{
+        width: 30px;
+        height: 30px;
+        border: 1.5px solid grey;
+        border-style: inset;
+    }
+    .whitecell{
+        background-color: white;
+    }
+    .blackcell{
+        background-color: black;
+    }
+    </style>
+</head>
+<body>
+    <br><br>
+    <script type="text/javascript">
+    var center=document.createElement('center');
+    var ChessTable=document.createElement('table');
+    for(var i=0;i<8;i++){
+        var tr=document.createElement('tr')
+        for(var j=0;j<8;j++){
+            var td=document.createElement('td')
+
+            if((i+j)%2==0){
+                td.setAttribute('class', 'cell whitecell');
+                tr.appendChild(td);
+            }
+          else{
+            td.setAttribute('class','cell blackcell');
+            tr.appendChild(td);
+          }
+            
+        }
+        ChessTable.appendChild(tr);
+
+
+    }
+    center.appendChild(ChessTable);
+    ChessTable.setAttribute('cellspacing','0');
+    ChessTable.setAttribute('width','270px');
+    document.body.appendChild(center);
+</script>
+    
+</body>
+</html>
